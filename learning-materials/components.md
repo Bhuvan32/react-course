@@ -1,6 +1,8 @@
-# function component #
+# function component 
 
-## Person-> Person.js ##
+## Person-> Person.js 
+
+```javascript
 
 import React from 'react'
 
@@ -14,7 +16,11 @@ const person = () => {
 
 export default person
 
-## App.js ##
+```
+
+## App.js 
+
+```javascript
 
 import React from 'react';
 import Person from './Person/Person'
@@ -28,7 +34,9 @@ function App() {
 
   );
   
-  // return React.createElement('div', {className: "App"}, React.createElement('h1', null, 'Hello World!'))
 }
 
 export default App;
+
+```
+***
