@@ -1,7 +1,24 @@
+# function component #
+
+## Person-> Person.js ##
+
+import React from 'react'
+
+const person = () => {
+    return (
+        <div>
+            <h1>I'm a Person</h1>
+        </div>
+    )
+}
+
+export default person
+
+## App.js ##
+
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import Person from './Person/Person'
+
 function App() {
   return (
     <div className="App">
