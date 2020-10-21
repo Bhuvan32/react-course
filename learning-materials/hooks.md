@@ -1,6 +1,21 @@
+# HOOKS
+
+- Use state in function Components.
+- If we want to set the state in Event Handler, It doesn't merge the state, it's actually replace the state.
+
+## IMPORT
+
+```JAVASCRIPT
+
 import React, {useState} from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+```
+
+## App.js
+
+```javascript
+
+import React, {useState} from 'react';
 import Person from './Person/Person'
 
 const App = props => {
@@ -12,7 +27,7 @@ const App = props => {
     ],
     otherState: "some value"
   })
-  console.log(personsState);
+  
   const changeNameHandler = () => {
     // DON'T DO THIS ==> this.state.persons[0].name = "Bhuvanesh"
     setPersonsState({
@@ -39,3 +54,6 @@ export default App;
 
 
 
+
+
+```

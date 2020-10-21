@@ -4,13 +4,13 @@
 
 class App extends Component {
   
-  ### state = {
+  state = {
     persons : [
       {name: "Bhuvan", age: 24},
       {name: "Naresh", age: 23}
     ]
-  } ###
-
+  }
+  
   render() {
     return (
       <div className="App">
