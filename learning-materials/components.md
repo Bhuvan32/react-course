@@ -40,3 +40,25 @@ export default App;
 
 ```
 ***
+
+# class component 
+
+```javascript
+
+class App extends Component {
+
+  render() {
+    return (
+      <div className="App">
+        <Person name="Bhuvan" age="24" />
+        <Person name="Kumar" age="23" />
+      </div>
+  
+    );
+  }
+  
+}
+
+export default App;
+
+```

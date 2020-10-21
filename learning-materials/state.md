@@ -1,15 +1,16 @@
-import React, {Component} from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Person from './Person/Person'
+# STATE
+
+```javascript
 
 class App extends Component {
-  state = {
+  
+  ### state = {
     persons : [
       {name: "Bhuvan", age: 24},
       {name: "Naresh", age: 23}
     ]
-  }
+  } ###
+
   render() {
     return (
       <div className="App">
@@ -22,4 +23,4 @@ class App extends Component {
   
 }
 
-export default App;
+```
