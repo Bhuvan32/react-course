@@ -37,7 +37,7 @@
       return (
         <div className="App">
 
-          == <button style={styles} onClick={this.changeNameHandler.bind(this, 'Bhuvanesh')}>Button</button> ==
+          <mark><button style={styles} onClick={this.changeNameHandler.bind(this, 'Bhuvanesh')}>Button</button></mark>
 
           <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
 
