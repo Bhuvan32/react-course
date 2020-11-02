@@ -39,6 +39,15 @@ const App = props => {
     })
   }
 
+  const nameChangedHandler = (event) => {
+      setPersonsState({
+        persons : [
+          {name: "Bhuvanesh", age: 24},
+          {name: event.target.value, age: 28}
+        ],
+        otherState: personsState.otherState
+      })
+  }
     return (
       <div className="App">
         <button onClick={changeNameHandler}>Button</button>
