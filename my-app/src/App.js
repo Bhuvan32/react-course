@@ -10,11 +10,13 @@ class App extends Component {
     persons : [
       {id: "id-1", name: "Bhuvan", age: 24},
       {id: "id-2", name: "Naresh", age: 23},
-      {id: "id-3", name: "Henry", age: 23}
+      {id: "id-3", name: "Henry", age: 23},
     ],
+    showPersons: false
   }
   
   toggleHandler = () => {
+
     const doesShow = this.state.showPersons
     this.setState({showPersons: !doesShow})
 
