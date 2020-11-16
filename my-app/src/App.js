@@ -1,8 +1,8 @@
 import React, {Component, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Radium, { StyleRoot } from 'radium'
 import Person from './Person/Person'
-import person from './Person/Person';
 
 class App extends Component {
 
@@ -49,7 +49,10 @@ class App extends Component {
         border: '1px solid blue',
         padding: '16px',
         outline: '0',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        ':hover': {
+          backgroundColor: 'lightgreen',
+        }
       }
       let persons = null;
 
@@ -64,24 +67,40 @@ class App extends Component {
             key={person.id}
             changed={(event) => this.nameChangeHandler(event, person.id) }/>
           })}
-      
           </div> 
-        )
+
+        );
+        styles.backgroundColor = 'red'
+        styles[':hover'] = {
+          backgroundColor: '#e27272',
+        }
       }
 
+      const classes = [];
+
+      if(this.state.persons.length <= 2){
+        classes.push('red')
+      }
+      if(this.state.persons.length <= 1){
+        classes.push('normal')
+      }
+
+
       return (
+        <StyleRoot>
         <div className="App">
+          <h1 className={classes.join(' ')}>This is working!!!</h1>
           <button style={styles} onClick={this.toggleHandler}>Toggle Persons</button>
      
           {persons}
         </div>
-    
+        </StyleRoot>
       );
     }
   
 }
 
-export default App;
+export default Radium(App);
 
 
 
