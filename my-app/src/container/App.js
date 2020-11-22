@@ -1,7 +1,8 @@
-import React, {Component, useState} from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Person from './Person/Person'
+import React, {Component} from 'react';
+
+import classes from './App.css';
+import Persons from '../Components/Persons/Persons'
+import Cockpit from '../Components/Cockpit/Cockpit'
 
 class App extends Component {
 
@@ -35,7 +36,6 @@ class App extends Component {
   }
 
   deletePerson = (personIndex) => {
-    // const persons = this.state.persons.slice()
     const persons = [...this.state.persons]
     persons.splice(personIndex, 1)
     this.setState({persons: persons})
@@ -45,38 +45,17 @@ class App extends Component {
     render() {
    
       let persons = null;
+      
 
       if(this.state.showPersons) {
-        persons = (
-          < div>
-          {this.state.persons.map((person, index) => {
-            return <Person 
-            click={() => this.deletePerson(index)} 
-            name={person.name} 
-            age={person.age} 
-            key={person.id}
-            changed={(event) => this.nameChangeHandler(event, person.id) }/>
-          })}
-          </div> 
-
-        );
+        persons = <Persons 
+                   persons={this.state.persons} 
+                   clicked={this.deletePerson} 
+                   changed={this.nameChangeHandler}/>
       }
-
-      const classes = [];
-
-      if(this.state.persons.length <= 2){
-        classes.push('red')
-      }
-      if(this.state.persons.length <= 1){
-        classes.push('normal')
-      }
-
-
       return (
-        <div className="App">
-          <h1 className={classes.join(' ')}>This is working!!!</h1>
-          <button className="button" onClick={this.toggleHandler}>Toggle Persons</button>
-     
+        <div className={classes.App}>
+          <Cockpit showPersons={this.state.showPersons} persons={this.state.persons} clicked={this.toggleHandler}/>
           {persons}
         </div>
       );
