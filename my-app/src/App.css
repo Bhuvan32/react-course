@@ -15,3 +15,15 @@
 .normal {
   font-weight: normal;
 }
+
+.button {
+  background-color: white;
+border: 1px solid blue;
+padding: 16px;
+outline: 0;
+cursor: pointer;
+}
+
+.button:hover {
+  background-color: lightgreen;
+}
